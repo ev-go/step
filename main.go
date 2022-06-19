@@ -3,36 +3,54 @@ package main
 import (
 	"errors"
 	"fmt"
+	"math"
 )
 
-type typeInputData struct{}
+type InputDater interface {
+	verifyScanInputDataFormat() error
+}
 
-func (v *typeInputData) verifyScanInputDataFormat() (string, error) {
+type typeInputData struct {
+	number float64
+}
+
+func (z *typeInputData) verifyScanInputDataFormat() error {
 	var a float64
-	a = v % 1
-	if a != 0 {
-		return "", errors.New("invalid Scan data input type. Need: int")
+	a = math.Round(z.number)
+	//fmt.Println("input value=", z.number, "round value=", a)
+	if a != z.number {
+		return errors.New("invalid Scan data input type. Need: int")
+	} else {
+		return nil
 	}
+
 }
 
 func main() {
-	var v float32
+	var v float64
 	count, err := fmt.Scan(&v)
 
 	if err != nil {
 		panic(err)
 	} else if count != 1 {
-		fmt.Println("right number of input values=1", "\nnumber of input values=", count)
+		//fmt.Println("right number of input values=1", "\nnumber of input values=", count)
 	} else {
-		fmt.Println("fmt.Scat: right number of input values and no errors")
+		//fmt.Println("fmt.Scat: right number of input values and no errors")
+	}
+
+	var z InputDater = &typeInputData{v}
+
+	err = z.verifyScanInputDataFormat()
+	if err != nil {
+		panic(err)
 	}
 
 	if v > 0 {
-		fmt.Println("число положительное")
+		fmt.Println("Число положительное")
 	} else if v < 0 {
-		fmt.Println("число отрицательное")
+		fmt.Println("Число отрицательное")
 	} else {
-		fmt.Println("число не полодительное и не отрицательное")
+		fmt.Println("Ноль")
 	}
 
 }
