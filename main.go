@@ -3,67 +3,116 @@ package main
 import "fmt"
 
 func main() {
-	var v int
-	fmt.Scan(&v)
-	var a, b, c, d, e, f, g, h, j, k, l int
-	a = v / 100000
-	//fmt.Println(a)
-	b = v % 100000
-	c = b / 10000
-	//fmt.Println(c)
-	d = b % 10000
-	e = d / 1000
-	//fmt.Println(e)
-	f = d % 1000
-	g = f / 100
-	//fmt.Println(g)
-	h = f % 100
-	j = h / 10
-	//fmt.Println(j)
-	k = h % 10
-	l = k
-	//fmt.Println(l)
-
-	y := a + c + e
-	z := g + j + l
-
-	if z == y {
-		fmt.Println("YES")
+	var v, w int
+	count, err := fmt.Scan(&v, &w)
+	fmt.Println(count)
+	if v >
+	if err != nil {
+		panic(err)
+	} else if count != 2 {
+		fmt.Println("right number of input values=2", "\nnumber of input values=", count)
 	} else {
-		fmt.Println("NO")
+		fmt.Println("fmt.Scat: right number of input values and no errors")
 	}
-	//switch {
-	//case v > 999999:
-	//	fmt.Println("wrong number. Input value cant be more than 10000")
-	//case v > 99999:
-	//	a = v / 100000
-	//	fmt.Println(a)
-	//case v > 9999:
-	//	b = v / 10000
-	//	fmt.Println(b)
-	//case v > 999:
-	//	c = v / 1000
-	//	fmt.Println(c)
-	//case v > 99:
-	//	d = v / 100
-	//	fmt.Println(d)
-	//case v > 9:
-	//	e = v / 10
-	//	fmt.Println(e)
-	//case v > 0:
-	//	f = v
-	//	fmt.Println(f)
-	//default:
-	//	fmt.Println("wrong number. Input value must be more than 0")
-	//}
-	//fmt.Println(a)
-	//fmt.Println(b)
-	//fmt.Println(c)
-	//fmt.Println(d)
-	//fmt.Println(e)
-	//fmt.Println(f)
 
+	var numb int
+
+	for i := v; i <= w; i++ {
+		numb = numb + i
+	}
+	fmt.Println(numb)
 }
+
+//package main
+//
+//import "fmt"
+//
+//func main() {
+//	var v int
+//	fmt.Scan(&v)
+//
+//	a := v % 400
+//	n1 := a == 0
+//
+//	b := v % 4
+//	n2 := b == 0
+//	c := v % 100
+//	n3 := c == 0
+//	n4 := n2 && !n3
+//
+//	if n1 || n4 {
+//		fmt.Println("YES")
+//	} else {
+//		fmt.Println("NO")
+//	}
+//}
+
+//package main
+//
+//import "fmt"
+//
+//func main() {
+//	var v int
+//	fmt.Scan(&v)
+//	var a, b, c, d, e, f, g, h, j, k, l int
+//	a = v / 100000
+//	//fmt.Println(a)
+//	b = v % 100000
+//	c = b / 10000
+//	//fmt.Println(c)
+//	d = b % 10000
+//	e = d / 1000
+//	//fmt.Println(e)
+//	f = d % 1000
+//	g = f / 100
+//	//fmt.Println(g)
+//	h = f % 100
+//	j = h / 10
+//	//fmt.Println(j)
+//	k = h % 10
+//	l = k
+//	//fmt.Println(l)
+//
+//	y := a + c + e
+//	z := g + j + l
+//
+//	if z == y {
+//		fmt.Println("YES")
+//	} else {
+//		fmt.Println("NO")
+//	}
+//	//switch {
+//	//case v > 999999:
+//	//	fmt.Println("wrong number. Input value cant be more than 10000")
+//	//case v > 99999:
+//	//	a = v / 100000
+//	//	fmt.Println(a)
+//	//case v > 9999:
+//	//	b = v / 10000
+//	//	fmt.Println(b)
+//	//case v > 999:
+//	//	c = v / 1000
+//	//	fmt.Println(c)
+//	//case v > 99:
+//	//	d = v / 100
+//	//	fmt.Println(d)
+//	//case v > 9:
+//	//	e = v / 10
+//	//	fmt.Println(e)
+//	//case v > 0:
+//	//	f = v
+//	//	fmt.Println(f)
+//	//default:
+//	//	fmt.Println("wrong number. Input value must be more than 0")
+//	//}
+//	//fmt.Println(a)
+//	//fmt.Println(b)
+//	//fmt.Println(c)
+//	//fmt.Println(d)
+//	//fmt.Println(e)
+//	//fmt.Println(f)
+//
+//}
 
 //package main
 //
