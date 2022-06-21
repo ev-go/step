@@ -6,7 +6,9 @@ func main() {
 	var v, w int
 	count, err := fmt.Scan(&v, &w)
 	fmt.Println(count)
-	if v >
+	if !(v < w && w <= 100 && v <= 100) {
+		panic("wrong numbers")
+	}
 	if err != nil {
 		panic(err)
 	} else if count != 2 {
