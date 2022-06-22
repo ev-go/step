@@ -1,29 +1,67 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
+
+func validator(a int) int {
+	if a > 9 && a < 100 && (a%8 == 0) {
+		return a
+	} else {
+		return 0
+	}
+}
 
 func main() {
-	var v, w int
-	count, err := fmt.Scan(&v, &w)
-	fmt.Println(count)
-	if !(v < w && w <= 100 && v <= 100) {
-		panic("wrong numbers")
-	}
-	if err != nil {
-		panic(err)
-	} else if count != 2 {
-		fmt.Println("right number of input values=2", "\nnumber of input values=", count)
-	} else {
-		fmt.Println("fmt.Scat: right number of input values and no errors")
-	}
+	var a, b, c, d, e, f int
+	fmt.Scan(&a)
+	fmt.Scan(&b, &c, &d, &e, &f)
+	//val := validatorStruct{b, c, d, e, f, 0, 0}
 
-	var numb int
+	bb := validator(b)
+	cc := validator(c)
+	dd := validator(d)
+	ee := validator(e)
+	ff := validator(f)
 
-	for i := v; i <= w; i++ {
-		numb = numb + i
-	}
-	fmt.Println(numb)
+	sum := bb + cc + dd + ee + ff
+
+	fmt.Println(sum)
+
+	//var sum int
+	//for i := 1; i < a; i++ {
+	//	sum = sum +
+	//}
+	//fmt.Scan(&b, &c, &d, &e, &f)
+	//fmt.Println(a, b, c, d, e, f)
 }
+
+//package main
+//
+//import "fmt"
+//
+//func main() {
+//	var v, w int
+//	count, err := fmt.Scan(&v, &w)
+//	fmt.Println(count)
+//	if !(v < w && w <= 100 && v <= 100) {
+//		panic("wrong numbers")
+//	}
+//	if err != nil {
+//		panic(err)
+//	} else if count != 2 {
+//		fmt.Println("right number of input values=2", "\nnumber of input values=", count)
+//	} else {
+//		fmt.Println("fmt.Scat: right number of input values and no errors")
+//	}
+//
+//	var numb int
+//
+//	for i := v; i <= w; i++ {
+//		numb = numb + i
+//	}
+//	fmt.Println(numb)
+//}
 
 //package main
 //
