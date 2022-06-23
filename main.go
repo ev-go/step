@@ -2,27 +2,47 @@ package main
 
 import "fmt"
 
-//func validator(a int) int {
-//	if a > 9 && a < 100 && (a%8 == 0) {
-//		return a
-//	} else {
-//		return 0
-//	}
-//}
-
 func main() {
-	var a, b, sum int
-	fmt.Scan(&a)
-
-	for i := 1; i <= a; i++ {
-		fmt.Scan(&b)
-		if b > 9 && b < 100 && (b%8 == 0) {
-			sum = sum + b
+	var a int
+	var i int
+	var count int
+	for fmt.Scan(&a); a != 0; {
+		if a > i {
+			i = a
+			count = 1
+		} else if a == i {
+			count = count + 1
 		}
-		//fmt.Println(sum)
+		fmt.Scan(&a)
 	}
-	fmt.Println(sum)
+	fmt.Println(count)
 }
+
+//package main
+//
+//import "fmt"
+//
+////func validator(a int) int {
+////	if a > 9 && a < 100 && (a%8 == 0) {
+////		return a
+////	} else {
+////		return 0
+////	}
+////}
+//
+//func main() {
+//	var a, b, sum int
+//	fmt.Scan(&a)
+//
+//	for i := 1; i <= a; i++ {
+//		fmt.Scan(&b)
+//		if b > 9 && b < 100 && (b%8 == 0) {
+//			sum = sum + b
+//		}
+//		//fmt.Println(sum)
+//	}
+//	fmt.Println(sum)
+//}
 
 //var a, b, c, d, e, f int
 //fmt.Scan(&a)
