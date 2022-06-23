@@ -1,40 +1,50 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-func validator(a int) int {
-	if a > 9 && a < 100 && (a%8 == 0) {
-		return a
-	} else {
-		return 0
-	}
-}
+//func validator(a int) int {
+//	if a > 9 && a < 100 && (a%8 == 0) {
+//		return a
+//	} else {
+//		return 0
+//	}
+//}
 
 func main() {
-	var a, b, c, d, e, f int
+	var a, b, sum int
 	fmt.Scan(&a)
-	fmt.Scan(&b, &c, &d, &e, &f)
-	//val := validatorStruct{b, c, d, e, f, 0, 0}
 
-	bb := validator(b)
-	cc := validator(c)
-	dd := validator(d)
-	ee := validator(e)
-	ff := validator(f)
-
-	sum := bb + cc + dd + ee + ff
-
+	for i := 1; i <= a; i++ {
+		fmt.Scan(&b)
+		if b > 9 && b < 100 && (b%8 == 0) {
+			sum = sum + b
+		}
+		//fmt.Println(sum)
+	}
 	fmt.Println(sum)
-
-	//var sum int
-	//for i := 1; i < a; i++ {
-	//	sum = sum +
-	//}
-	//fmt.Scan(&b, &c, &d, &e, &f)
-	//fmt.Println(a, b, c, d, e, f)
 }
+
+//var a, b, c, d, e, f int
+//fmt.Scan(&a)
+//fmt.Scan(&b, &c, &d, &e, &f)
+////val := validatorStruct{b, c, d, e, f, 0, 0}
+//
+//bb := validator(b)
+//cc := validator(c)
+//dd := validator(d)
+//ee := validator(e)
+//ff := validator(f)
+//
+//sum := bb + cc + dd + ee + ff
+//
+//fmt.Println(sum)
+
+//var sum int
+//for i := 1; i < a; i++ {
+//	sum = sum +
+//}
+//fmt.Scan(&b, &c, &d, &e, &f)
+//fmt.Println(a, b, c, d, e, f)
 
 //package main
 //
