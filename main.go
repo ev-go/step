@@ -3,20 +3,36 @@ package main
 import "fmt"
 
 func main() {
-	var a int
-	var i int
-	var count int
-	for fmt.Scan(&a); a != 0; {
-		if a > i {
-			i = a
-			count = 1
-		} else if a == i {
-			count = count + 1
+	var n, c, d int
+	//fmt.Scan(&n, &c, &d)
+	for fmt.Scan(&n); c < n && d < n {
+		if (d % c) != 0 {
+			fmt.Println(c)
+			break
 		}
-		fmt.Scan(&a)
+
 	}
-	fmt.Println(count)
 }
+
+//package main
+//
+//import "fmt"
+//
+//func main() {
+//	var a int
+//	var i int
+//	var count int
+//	for fmt.Scan(&a); a != 0; {
+//		if a > i {
+//			i = a
+//			count = 1
+//		} else if a == i {
+//			count = count + 1
+//		}
+//		fmt.Scan(&a)
+//	}
+//	fmt.Println(count)
+//}
 
 //package main
 //
