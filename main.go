@@ -4,13 +4,14 @@ import "fmt"
 
 func main() {
 	var n, c, d int
-	//fmt.Scan(&n, &c, &d)
-	for fmt.Scan(&n); c < n && d < n {
-		if (d % c) != 0 {
-			fmt.Println(c)
-			break
-		}
+	fmt.Scan(&n, &c, &d)
+	if (n > 0) && (n <= 1000) && (c <= n) && (d <= n) {
+		if n%c == 0 && n%d != 0 {
+			fmt.Println(n)
 
+		} else if ((c % d) != 0) && ((d % c) != 0) {
+			fmt.Println(c)
+		}
 	}
 }
 
