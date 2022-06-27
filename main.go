@@ -3,21 +3,38 @@ package main
 import "fmt"
 
 func main() {
-	var n, c, d int
-	fmt.Scan(&n, &c, &d)
-	for i := 1; i <= n; i++ {
-		z := i%c == 0
-		y := i%d != 0
-		//fmt.Println(i, ":", z, y)
-		if (n > 0) && c > 0 && d > 0 && (n <= 10000) && (c <= 10000) && (d <= 10000) {
-			if z && y {
-				fmt.Println(i)
-				break
-
-			}
+	var v int
+	for ; v < 101; fmt.Scan(&v) {
+		if v < 10 {
+			continue
+		} else if v > 100 {
+			break
+		} else {
+			fmt.Println(v)
 		}
 	}
 }
+
+//package main
+//
+//import "fmt"
+//
+//func main() {
+//	var n, c, d int
+//	fmt.Scan(&n, &c, &d)
+//	for i := 1; i <= n; i++ {
+//		z := i%c == 0
+//		y := i%d != 0
+//		//fmt.Println(i, ":", z, y)
+//		if (n > 0) && c > 0 && d > 0 && (n <= 10000) && (c <= 10000) && (d <= 10000) {
+//			if z && y {
+//				fmt.Println(i)
+//				break
+//
+//			}
+//		}
+//	}
+//}
 
 //package main
 //
