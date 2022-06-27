@@ -5,12 +5,16 @@ import "fmt"
 func main() {
 	var n, c, d int
 	fmt.Scan(&n, &c, &d)
-	if (n > 0) && (n <= 1000) && (c <= n) && (d <= n) {
-		if n%c == 0 && n%d != 0 {
-			fmt.Println(n)
+	for i := 1; i <= n; i++ {
+		z := i%c == 0
+		y := i%d != 0
+		//fmt.Println(i, ":", z, y)
+		if (n > 0) && c > 0 && d > 0 && (n <= 10000) && (c <= 10000) && (d <= 10000) {
+			if z && y {
+				fmt.Println(i)
+				break
 
-		} else if ((c % d) != 0) && ((d % c) != 0) {
-			fmt.Println(c)
+			}
 		}
 	}
 }
