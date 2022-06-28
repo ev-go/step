@@ -3,21 +3,34 @@ package main
 import "fmt"
 
 func main() {
-	var x, p, y int
-	fmt.Scan(&x, &p, &y)
-	x1 := x * 100
-
-	//p1 := p * 100
-	y1 := y * 100
-	for i := 1; i <= y; i++ {
-		x1 = x1 + x1*(p)/100
-		fmt.Println(x1)
-		if x1 >= y1 {
-			fmt.Println(i)
-			break
-		}
+	var x, y int
+	fmt.Scan(&x, &y)
+	if x<0 || x>10000 || y<0 || y>10000{
+		panic("Wrong numbers")
 	}
+	for
 }
+
+//package main
+//
+//import "fmt"
+//
+//func main() {
+//	var x, p, y int
+//	fmt.Scan(&x, &p, &y)
+//	x1 := x * 100
+//
+//	//p1 := p * 100
+//	y1 := y * 100
+//	for i := 1; i <= y; i++ {
+//		x1 = x1 + x1*(p)/100
+//		fmt.Println(x1)
+//		if x1 >= y1 {
+//			fmt.Println(i)
+//			break
+//		}
+//	}
+//}
 
 // package main
 
