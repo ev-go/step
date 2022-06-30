@@ -1,14 +1,53 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
+
+func quantityOfNumbersCnt(a float64) int {
+	var i, y float64
+	var count int
+
+	for i = 10000; i >= 1; i = i / 10 {
+		y = a / i
+		//fmt.Println("y=", y)
+		if y <= 1 {
+			continue
+		} else {
+			count++
+			//fmt.Println(count)
+		}
+	}
+	return count
+}
 
 func main() {
-	var x, y int
+	var x, y float64
 	fmt.Scan(&x, &y)
-	if x<0 || x>10000 || y<0 || y>10000{
+	if x < 0 || x > 10000 || y < 0 || y > 10000 {
 		panic("Wrong numbers")
 	}
-	for
+	w := quantityOfNumbersCnt(x)
+	z := quantityOfNumbersCnt(y)
+
+	firstnum := int(x)
+	//secondNum := int(y)
+
+	var count int
+	//var i float64
+
+	for i := (w - 1); i >= 0; i-- {
+		count = firstnum / int(math.Pow(10, float64(i)))
+		firstnum = firstnum % int(math.Pow(10, float64(i)))
+		fmt.Println(count)
+		for i := (z - 1); i >= 0; i-- {
+
+		}
+	}
+
+	//fmt.Println(w)
+	//fmt.Println(z)
 }
 
 //package main
