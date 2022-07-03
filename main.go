@@ -12,12 +12,10 @@ func quantityOfNumbersCnt(a float64) int {
 
 	for i = 10000; i >= 1; i = i / 10 {
 		y = a / i
-		//fmt.Println("y=", y)
 		if y <= 1 {
 			continue
 		} else {
 			count++
-			//fmt.Println(count)
 		}
 	}
 	return count
@@ -36,30 +34,23 @@ func main() {
 	secondNum := int(y)
 
 	var count int
-
-	//var i float64
 	var answerString string
 
 	for i := (w - 1); i >= 0; i-- {
 		count = firstnum / int(math.Pow(10, float64(i)))
 		firstnum = firstnum % int(math.Pow(10, float64(i)))
-		//fmt.Println("first num=", count)
 		secondNum2 := secondNum
 		for q := (z - 1); q >= 0; q-- {
 			var count2 int
 
 			count2 = secondNum2 / int(math.Pow(10, float64(q)))
 			secondNum2 = secondNum2 % int(math.Pow(10, float64(q)))
-			//fmt.Println("second num", count2)
 			if count == count2 {
 				answerString = answerString + strconv.Itoa(count) + " "
-				//fmt.Println("match=", count2)
 			}
 		}
 	}
 	fmt.Println(answerString)
-	//fmt.Println(w)
-	//fmt.Println(z)
 }
 
 //package main
