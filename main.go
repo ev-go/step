@@ -1,57 +1,82 @@
 package main
 
-import (
-	"fmt"
-	"math"
-	"strconv"
-)
-
-func quantityOfNumbersCnt(a float64) int {
-	var i, y float64
-	var count int
-
-	for i = 10000; i >= 1; i = i / 10 {
-		y = a / i
-		if y <= 1 {
-			continue
-		} else {
-			count++
-		}
-	}
-	return count
-}
+import "fmt"
 
 func main() {
-	var x, y float64
-	fmt.Scan(&x, &y)
-	if x < 0 || x > 10000 || y < 0 || y > 10000 {
-		panic("Wrong numbers")
+	var a float64
+	fmt.Scan(&a)
+	if a <= 0 {
+		fmt.Printf("число %2.2f не подходит", a)
+	} else if a > 10000 {
+		fmt.Printf("%e", a)
+	} else {
+		a = a * a
+		fmt.Printf("%.4f", a)
 	}
-	w := quantityOfNumbersCnt(x)
-	z := quantityOfNumbersCnt(y)
 
-	firstnum := int(x)
-	secondNum := int(y)
-
-	var count int
-	var answerString string
-
-	for i := (w - 1); i >= 0; i-- {
-		count = firstnum / int(math.Pow(10, float64(i)))
-		firstnum = firstnum % int(math.Pow(10, float64(i)))
-		secondNum2 := secondNum
-		for q := (z - 1); q >= 0; q-- {
-			var count2 int
-
-			count2 = secondNum2 / int(math.Pow(10, float64(q)))
-			secondNum2 = secondNum2 % int(math.Pow(10, float64(q)))
-			if count == count2 {
-				answerString = answerString + strconv.Itoa(count) + " "
-			}
-		}
-	}
-	fmt.Println(answerString)
 }
+
+//var a rune = 'Ы'
+//fmt.Printf("%U", a)
+////fmt.Println(string(a))
+//var a float64 = 100.123456
+//fmt.Printf("это число %f типа %T", a, a)
+// вывод: это число 100.123456 типа float64
+
+//package main
+//
+//import (
+//	"fmt"
+//	"math"
+//	"strconv"
+//)
+//
+//func quantityOfNumbersCnt(a float64) int {
+//	var i, y float64
+//	var count int
+//
+//	for i = 10000; i >= 1; i = i / 10 {
+//		y = a / i
+//		if y <= 1 {
+//			continue
+//		} else {
+//			count++
+//		}
+//	}
+//	return count
+//}
+//
+//func main() {
+//	var x, y float64
+//	fmt.Scan(&x, &y)
+//	if x < 0 || x > 10000 || y < 0 || y > 10000 {
+//		panic("Wrong numbers")
+//	}
+//	w := quantityOfNumbersCnt(x)
+//	z := quantityOfNumbersCnt(y)
+//
+//	firstnum := int(x)
+//	secondNum := int(y)
+//
+//	var count int
+//	var answerString string
+//
+//	for i := (w - 1); i >= 0; i-- {
+//		count = firstnum / int(math.Pow(10, float64(i)))
+//		firstnum = firstnum % int(math.Pow(10, float64(i)))
+//		secondNum2 := secondNum
+//		for q := (z - 1); q >= 0; q-- {
+//			var count2 int
+//
+//			count2 = secondNum2 / int(math.Pow(10, float64(q)))
+//			secondNum2 = secondNum2 % int(math.Pow(10, float64(q)))
+//			if count == count2 {
+//				answerString = answerString + strconv.Itoa(count) + " "
+//			}
+//		}
+//	}
+//	fmt.Println(answerString)
+//}
 
 //package main
 //
