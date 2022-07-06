@@ -3,11 +3,18 @@ package main
 import "fmt"
 
 func main() {
-	var a int
-	fmt.Printf(" Input ")
-	fmt.Scan(&a)
+	a := [5]int{1, 2, 3, 4, 5}
+	fmt.Println(a) // [1 2 3 4 5]
 
-	fmt.Println(a)
+	for idx, elem := range a {
+		fmt.Printf("Элемент с индексом %d: %d\n", idx, elem)
+		fmt.Println("1")
+		// Элемент с индексом 0: 1
+		// Элемент с индексом 1: 2
+		// Элемент с индексом 2: 3
+		// Элемент с индексом 3: 4
+		// Элемент с индексом 4: 5
+	}
 }
 
 //package main
