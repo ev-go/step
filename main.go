@@ -8,7 +8,7 @@ import (
 
 //n int // возврат слайса
 
-func sliceGen[T comparable](inpSlice []T) []T { // generation slice of different types random values
+func sliceGen[T any](inpSlice []T) []T { // generation slice of different types random values
 	outSlice := inpSlice
 	return outSlice
 
@@ -22,16 +22,23 @@ func randFloats(min, max float64, n int) []float64 { // Generation random float6
 	return res
 }
 
+//func sliceConcatenation[T, F any](firstSlice []T, secondSlice []F) []T {
+//	ConcatenatedSlice := append(firstSlice, []T(secondSlice)...)
+//	return ConcatenatedSlice
+//}
+
 func main() {
 
 	testArrayOfInts := []int{rand.Intn(100), rand.Intn(100), rand.Intn(100), rand.Intn(100)}
-	sliceOfTestInts := sliceGen(testArrayOfInts)
+	sliceOfTestInts := sliceGen[int](testArrayOfInts)
 	fmt.Println(sliceOfTestInts)
 
 	rand.Seed(time.Now().UnixNano())
 	testArrayOfFloats := randFloats(1.00, 100.00, 4)
-	sliceOfTestFloats := sliceGen(testArrayOfFloats)
+	sliceOfTestFloats := sliceGen[float64](testArrayOfFloats)
 	fmt.Println(sliceOfTestFloats)
+
+	//fmt.Println(sliceConcatenation(sliceOfTestInts, sliceOfTestFloats))
 
 }
 
