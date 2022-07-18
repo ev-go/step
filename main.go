@@ -7,6 +7,11 @@ import (
 )
 
 //n int // возврат слайса
+type Number interface {
+	int | int8 | int16 | int32 | int64 | uint | uint8 | uint16 | uint32 | uint64 | float32 | float64
+}
+
+type Vector[T Number] []T
 
 func sliceGen[T any](inpSlice []T) []T { // generation slice of different types random values
 	outSlice := inpSlice
@@ -27,19 +32,28 @@ func randFloats(min, max float64, n int) []float64 { // Generation random float6
 //	return ConcatenatedSlice
 //}
 
+func AddVector[T, F Number](vec1 Vector[T], vec2 Vector[F]) Vector[T] {
+	var result Vector[T]
+	for i := range vec1 {
+		result = append(result, vec1[i]+vec2[i])
+	}
+	return result
+}
+
 func main() {
 
-	testArrayOfInts := []int{rand.Intn(100), rand.Intn(100), rand.Intn(100), rand.Intn(100)}
+	testArrayOfInts := Vector[int]{rand.Intn(100), rand.Intn(100), rand.Intn(100), rand.Intn(100)}
 	sliceOfTestInts := sliceGen[int](testArrayOfInts)
 	fmt.Println(sliceOfTestInts)
 
 	rand.Seed(time.Now().UnixNano())
-	testArrayOfFloats := randFloats(1.00, 100.00, 4)
+	testArrayOfFloats := randFloats(1.00, 100.00, 1)
 	sliceOfTestFloats := sliceGen[float64](testArrayOfFloats)
 	fmt.Println(sliceOfTestFloats)
 
 	//fmt.Println(sliceConcatenation(sliceOfTestInts, sliceOfTestFloats))
-
+	result := AddVector(sliceOfTestInts, sliceOfTestFloats)
+	fmt.Println(result)
 }
 
 //
