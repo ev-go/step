@@ -1,21 +1,41 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+//n int // возврат слайса
+
+func sliceGen[T comparable](inpSlice []T) []T { // generation slice of different types random values
+	outSlice := inpSlice
+	return outSlice
+
+}
+
+func randFloats(min, max float64, n int) []float64 { // Generation random float64. n - length (number) of randoms
+	res := make([]float64, n)
+	for i := range res {
+		res[i] = min + rand.Float64()*(max-min)
+	}
+	return res
+}
 
 func main() {
-	a := [5]int{1, 2, 3, 4, 5}
-	fmt.Println(a) // [1 2 3 4 5]
 
-	for idx, elem := range a {
-		fmt.Printf("Элемент с индексом %d: %d\n", idx, elem)
-		fmt.Println("1")
-		// Элемент с индексом 0: 1
-		// Элемент с индексом 1: 2
-		// Элемент с индексом 2: 3
-		// Элемент с индексом 3: 4
-		// Элемент с индексом 4: 5
-	}
+	testArrayOfInts := []int{rand.Intn(100), rand.Intn(100), rand.Intn(100), rand.Intn(100)}
+	sliceOfTestInts := sliceGen(testArrayOfInts)
+	fmt.Println(sliceOfTestInts)
+
+	rand.Seed(time.Now().UnixNano())
+	testArrayOfFloats := randFloats(1.00, 100.00, 4)
+	sliceOfTestFloats := sliceGen(testArrayOfFloats)
+	fmt.Println(sliceOfTestFloats)
+
 }
+
+//
 
 //package main
 //
